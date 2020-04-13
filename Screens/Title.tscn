@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/background.png" type="Texture" id=1]
+[ext_resource path="res://UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UserInterface/QuitButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UserInterface/Title1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=5]
+
+[node name="MainScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -122.0
+margin_top = -73.0
+margin_right = 774.0
+margin_bottom = 407.0
+texture = ExtResource( 1 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 4 )]
+margin_left = -165.0
+margin_top = 113.0
+margin_right = 186.0
+margin_bottom = 170.0
+
+[node name="Menu" type="VBoxContainer" parent="."]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.0
+margin_top = -85.0
+margin_right = 145.0
+margin_bottom = 89.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="Menu" instance=ExtResource( 2 )]
+pause_mode = 2
+next_scene_path = "res://src/Levels/Level01.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource( 3 )]
+pause_mode = 2
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 88.0
+margin_right = 290.0
+margin_bottom = 174.0

@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/background.png" type="Texture" id=4]
+[ext_resource path="res://src/objects/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/objects/Portal2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Levels/Level04.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/objects/Spikes.tscn" type="PackedScene" id=9]
+
+[node name="LevelTemplate" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ 2400.0, 2403.0, 3915.0 ]
+}
+
+[node name="Spikes" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2780, 542 )
+Is_moving = false
+
+[node name="Spikes2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2921, 542 )
+Is_moving = false
+
+[node name="Portal2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3520, 553 )
+next_scene = ExtResource( 7 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="background" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 641, 189 )
+texture = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 80, 80 )
+collision_layer = 8
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 45, 0, 0, 46, 0, 0, 47, 0, 0, 48, 0, 0, 65536, 0, 0, 65581, 0, 0, 65582, 0, 0, 65583, 0, 0, 65584, 0, 0, 131072, 0, 0, 131117, 0, 0, 131118, 0, 0, 131119, 0, 0, 131120, 0, 0, 196608, 0, 0, 196653, 0, 0, 196654, 0, 0, 196655, 0, 0, 196656, 0, 0, 262144, 0, 0, 262189, 0, 0, 262190, 0, 0, 262191, 0, 0, 262192, 0, 0, 327680, 0, 0, 327725, 0, 0, 327726, 0, 0, 327727, 0, 0, 327728, 0, 0, 393216, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393246, 0, 0, 393247, 0, 0, 393248, 0, 0, 393249, 0, 0, 393252, 0, 0, 393253, 0, 0, 393254, 0, 0, 393255, 0, 0, 393256, 0, 0, 393257, 0, 0, 393261, 0, 0, 393262, 0, 0, 393263, 0, 0, 393264, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458785, 0, 0, 458786, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458794, 0, 0, 458795, 0, 0, 458796, 0, 0, 458797, 0, 0, 458798, 0, 0, 458799, 0, 0, 458800, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 524317, 0, 0, 524318, 0, 0, 524319, 0, 0, 524320, 0, 0, 524321, 0, 0, 524322, 0, 0, 524323, 0, 0, 524324, 0, 0, 524325, 0, 0, 524326, 0, 0, 524327, 0, 0, 524328, 0, 0, 524329, 0, 0, 524330, 0, 0, 524331, 0, 0, 524332, 0, 0, 524333, 0, 0, 524334, 0, 0, 524335, 0, 0, 524336, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 164, 79 )
+
+[node name="Camera2D" parent="Player" index="2"]
+position = Vector2( 75, -179 )
+limit_right = 3900
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1166, 521 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2008, 553 )
+
+[node name="Coin" parent="." instance=ExtResource( 5 )]
+position = Vector2( 616, 348 )
+
+[node name="Coin2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 756, 348 )
+
+[node name="Coin3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1486, 348 )
+
+[editable path="Player"]
